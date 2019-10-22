@@ -12,7 +12,7 @@ amass enum -d $1 -o $1-subdomains.txt
 
 # Massdns subdomain bruteforce
 echo "[+] Bruteforcing $1 with massdns ..."
-/opt/external/osint/massdns/scripts/subbrute.py /opt/external/osint/massdns/lists/names.txt $1 \
+/opt/external/osint/massdns/scripts/subbrute.py /opt/external/osint/massdns/lists/all.txt $1 \
 | massdns -r /opt/external/osint/massdns/lists/working-resolvers.txt -t A -o S -w $1-massdns.txt 2>/dev/null
 
 cat $1-massdns.txt | cut -d " " -f 1 | sed 's/.$//' | sed '/\*/d' >> $1-subdomains.txt
