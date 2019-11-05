@@ -3,7 +3,7 @@
 # Purpose: To quickly check for potential CDN cache poisoning issues for a list of URLs
 #          This just assumes that the unkeyed header is X-Forwarded-Port, but its just to check for low hanging fruits
 #          Disclaimer : Use at your own risk!
-#
+#          Reference: https://hackerone.com/reports/409370
 #################################################
 
 TIMEOUT=5 # seconds
